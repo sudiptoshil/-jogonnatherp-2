@@ -18,10 +18,10 @@
             </a>
         </div>
         <div class="metro-nav-block nav-block-grey">
-        <a data-original-title="" href="">
+        <a data-original-title="" href="{{route('add-new-item')}}">
                 <i class="icon-comments-alt"></i>
                 <div class="info"></div>
-                <div class="status">Create Bookstall User</div>
+                <div class="status">Add New Book Item</div>
             </a>
         </div>
         <div class="metro-nav-block nav-block-blue double">

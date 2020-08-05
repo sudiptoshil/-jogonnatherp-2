@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookstallItemsTable extends Migration
+class CreateBookItemsellsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateBookstallItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookstall_items', function (Blueprint $table) {
+        Schema::create('book_itemsells', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('item_code')->unsigned();
             $table->string('item_name');
             $table->integer('quantity');
             $table->double('price');
+            $table->string('customer_name');
+            $table->string('paid');
+            $table->string('due');
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreateBookstallItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookstall_items');
+        Schema::dropIfExists('book_itemsells');
     }
 }

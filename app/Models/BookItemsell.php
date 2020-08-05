@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BookstallItem extends Model
+class BookItemsell extends Model
 {
-    protected $guarded =[];
+    //
 }

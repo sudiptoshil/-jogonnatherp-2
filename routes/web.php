@@ -27,22 +27,28 @@ Route::group(['middleware' => ['adminmiddleware']], function () {
     Route::get('/admin/deactive-admin/{id}', 'Admin\AdminController@deactive')->name('admin-deactive');
     Route::get('/admin/password-reset', 'Admin\AdminController@password_reset')->name('password-reset');
     Route::post('/admin/password-reset', 'Admin\AdminController@update_password')->name('update-password');
-    // for creating bookstall user...........
+    // for creating bookstall user..................................................
     Route::get('/admin/create-bookstall-user', 'Admin\AdminController@bookstall_user')->name('bookstall-user');
     Route::post('/admin/create-bookstall-user', 'Admin\AdminController@save_bookstall_user')->name('save-bookstall-user');
     Route::get('/admin/active-bookstall-user/{id}', 'Admin\AdminController@bookstall_active')->name('bookstall-active');
     Route::get('/admin/deactive-bookstall-user/{id}', 'Admin\AdminController@bookstall_deactive')->name('bookstall-deactive');
-    Route::get('/admin/manage-bookstall-user', 'Admin\AdminController@manage_bookstall_user')->name('manage-bookstall');  
+    Route::get('/admin/manage-bookstall-user', 'Admin\AdminController@manage_bookstall_user')->name('manage-bookstall');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/login', 'Admin\AdminController@login')->name('admin-login');
 Route::post('/admin/login', 'Admin\AdminController@login_process')->name('admin-login-process');
 
-// for bookstall part .....
+// for bookstall part ...............................................................
 Route::group(['middleware' => ['bookstallmiddleware']], function () {
     Route::get('/bookstall/dashboard', 'Bookstall\BookstallController@index')->name('bookstall-dashboard');
     Route::get('/bookstall/logout', 'Bookstall\BookstallController@logout')->name('bookstall-logout');
+    Route::get('/bookstall/add-new-item', 'Bookstall\BookstallItemController@add_new_item')->name('add-new-item');
+    Route::post('/bookstall/add-new-item', 'Bookstall\BookstallItemController@save_new_item')->name('save-new-item');
+    Route::get('/bookstall/manage-item', 'Bookstall\BookstallItemController@manage_book_item')->name('manage-item');
+    Route::get('/bookstall/edit-item/{id}', 'Bookstall\BookstallItemController@edit_book_item')->name('edit-item');
+    Route::post('/bookstall/update-new-item', 'Bookstall\BookstallItemController@update_new_item')->name('update-new-item');
+
 });
 // for bookstall login
 Route::get('/bookstall/login', 'Bookstall\BookstallController@login')->name('bookstall-login');

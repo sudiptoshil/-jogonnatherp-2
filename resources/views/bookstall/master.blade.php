@@ -41,7 +41,7 @@
          <!-- BEGIN SIDEBAR MENU -->
           <ul class="sidebar-menu">
               <li class="sub-menu active">
-              <a class="" href="">
+              <a class="" href="{{route('bookstall-dashboard')}}">
                       <i class="icon-dashboard"></i>
                       <span>Dashboard</span>
                   </a>
@@ -53,22 +53,22 @@
                       <span class="arrow"></span>
                   </a>
                   <ul class="sub">
-                  <li><a class="" href="">Manage All Admin</a></li>
-                  <li><a class="" href="">Reset password</a></li>
-                  <li><a class="" href="">Manage All Bookstall User</a></li>
+                  <li><a class="" href="{{route('manage-item')}}">Manage All Item</a></li>
+                  <li><a class="" href=""></a></li>
+                  <li><a class="" href=""></a></li>
                   </ul>
               </li>
-              
+
           </ul>
          <!-- END SIDEBAR MENU -->
       </div>
       </div>
       <!-- END SIDEBAR -->
-      <!-- BEGIN PAGE -->  
+      <!-- BEGIN PAGE -->
       <div id="main-content">
          <!-- BEGIN PAGE CONTAINER-->
          <div class="container-fluid">
-            <!-- BEGIN PAGE HEADER-->   
+            <!-- BEGIN PAGE HEADER-->
             <div class="row-fluid">
                <div class="span12">
                    <!-- BEGIN THEME CUSTOMIZER-->
@@ -118,11 +118,11 @@
             <!-- BEGIN PAGE CONTENT-->
            @yield('bookstall-home')
 
-            <!-- END PAGE CONTENT-->         
+            <!-- END PAGE CONTENT-->
          </div>
          <!-- END PAGE CONTAINER-->
       </div>
-      <!-- END PAGE -->  
+      <!-- END PAGE -->
    </div>
    <!-- END CONTAINER -->
 
@@ -159,7 +159,7 @@
    <script src="{{asset('/')}}js/home-page-calender.js"></script>
    <script src="{{asset('/')}}js/chartjs.js"></script>
 
-   <!-- END JAVASCRIPTS -->   
+   <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
 </html>
