@@ -14,15 +14,8 @@
         <h3 align="center" style="color:green">{{Session::get('message')}}</h3>
             <div class="widget-body">
                 <!-- BEGIN FORM-->
-            <form action="" method="post" class="form-horizontal">
+            <form action="{{route('save-book-item-sales')}}" method="post" class="form-horizontal">
                 @csrf
-                    <div class="control-group">
-                        <label class="control-label">Item Code</label>
-                        <div class="controls">
-                            <input type="number" name="item_code" placeholder="Enter a item code" class="input-xxlarge" />
-                            <span class="help-inline"></span>
-                        </div>
-                    </div>
                     <div class="control-group">
                         <label class="control-label">Item Name</label>
                         <div class="controls">
@@ -44,6 +37,46 @@
                             <span class="help-inline"></span>
                         </div>
                     </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Customer Name</label>
+                        <div class="controls">
+                            <input type="text" name="customer_name" placeholder="Enter customer name" class="input-xxlarge" />
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Customer Mobile Number</label>
+                        <div class="controls">
+                            <input type="text" name="mobile_number" placeholder="Enter mobile number" class="input-xxlarge" />
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Paid</label>
+                        <div class="controls">
+                            <input type="text" name="paid" placeholder="Enter paid amount" class="input-xxlarge" />
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Due</label>
+                        <div class="controls">
+                            <input type="text" name="due" placeholder="Enter due amount" class="input-xxlarge" />
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Date</label>
+                        <div class="controls">
+                            <input type="date" name="date" placeholder="Enter a date" class="input-xxlarge" />
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
                     <div class="form-actions">
                         <button type="submit" class="btn blue"><i class="icon-ok"></i> Save</button>
                         <button type="reset" class="btn"><i class=" icon-remove"></i> Cancel</button>

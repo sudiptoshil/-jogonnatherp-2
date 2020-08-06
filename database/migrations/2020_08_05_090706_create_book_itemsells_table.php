@@ -19,8 +19,9 @@ class CreateBookItemsellsTable extends Migration
             $table->integer('quantity');
             $table->double('price');
             $table->string('customer_name');
-            $table->string('paid');
-            $table->string('due');
+            $table->string('paid')->nullable();
+            $table->string('mobile_number');
+            $table->string('due')->nullable();
             $table->date('date');
             $table->timestamps();
         });

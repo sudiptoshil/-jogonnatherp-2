@@ -25,10 +25,10 @@
             </a>
         </div>
         <div class="metro-nav-block nav-block-blue double">
-        <a data-original-title="" href="">
+        <a data-original-title="" href="{{route('book-item-sales')}}">
                 <i class="icon-eye-open"></i>
                 <div class="info"></div>
-                <div class="status">Create Admin</div>
+                <div class="status">Sales Form</div>
             </a>
         </div>
         <div class="metro-nav-block nav-block-red">

@@ -48,6 +48,10 @@ Route::group(['middleware' => ['bookstallmiddleware']], function () {
     Route::get('/bookstall/manage-item', 'Bookstall\BookstallItemController@manage_book_item')->name('manage-item');
     Route::get('/bookstall/edit-item/{id}', 'Bookstall\BookstallItemController@edit_book_item')->name('edit-item');
     Route::post('/bookstall/update-new-item', 'Bookstall\BookstallItemController@update_new_item')->name('update-new-item');
+    Route::get('/bookstall/book-item-sales', 'Bookstall\BookstallItemController@book_item_slaes_form')->name('book-item-sales');
+    Route::post('/bookstall/book-item-sales', 'Bookstall\BookstallItemController@save_book_item_slaes_form')->name('save-book-item-sales');
+
+
 
 });
 // for bookstall login

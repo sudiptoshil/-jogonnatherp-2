@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Bookstall;
 
 use App\Http\Controllers\Controller;
+use App\Models\BookItemsell;
 use App\Models\BookstallItem;
 use Illuminate\Http\Request;
 
@@ -46,5 +47,27 @@ class BookstallItemController extends Controller
         $book->price = $request->price;
         $book->save();
         return redirect('/bookstall/manage-item')->with('message','Book item updated successfully!!');
+    }
+
+    public function book_item_slaes_form()
+    {
+        return view('bookstall.newitem.book_item_sells_form');
+    }
+
+    public function save_book_item_slaes_form(Request $request)
+    {
+        $bookitem = new BookItemsell();
+        $bookitem->item_name = $request->item_name;
+        $bookitem->quantity = $request->quantity;
+        $bookitem->price = $request->price;
+        $bookitem->customer_name = $request->customer_name;
+        $bookitem->mobile_number = $request->mobile_number;
+        $bookitem->paid = $request->paid;
+        $bookitem->due = $request->due;
+        $bookitem->date = $request->date;
+        $bookitem->save();
+        return redirect()->back()->with('message','Bookitem form ready!!');
+
+
     }
 }
