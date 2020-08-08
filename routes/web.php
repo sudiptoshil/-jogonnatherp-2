@@ -10,6 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/clear-cache', function () {
+
+    echo 333;
+
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    return "Cache Clear";
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,6 +59,8 @@ Route::group(['middleware' => ['bookstallmiddleware']], function () {
     Route::post('/bookstall/update-new-item', 'Bookstall\BookstallItemController@update_new_item')->name('update-new-item');
     Route::get('/bookstall/book-item-sales', 'Bookstall\BookstallItemController@book_item_slaes_form')->name('book-item-sales');
     Route::post('/bookstall/book-item-sales', 'Bookstall\BookstallItemController@save_book_item_slaes_form')->name('save-book-item-sales');
+    Route::get('/bookstall/manage-book-item-sales', 'Bookstall\BookstallItemController@manage_all_book_item_sells')->name('manage-book-item-sales');
+    Route::get('/bookstall/book-sales-details/{id}', 'Bookstall\BookstallItemController@book_sales_details')->name('book-sales-details');
 
 
 

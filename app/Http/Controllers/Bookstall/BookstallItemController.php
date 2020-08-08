@@ -70,4 +70,17 @@ class BookstallItemController extends Controller
 
 
     }
+
+    public function manage_all_book_item_sells()
+    {
+        $sells_book  = BookItemsell::all();
+        return view('bookstall.newitem.manage_book_item_sells',compact('sells_book'));
+    }
+
+    public function book_sales_details($id)
+    {
+        // return $id;
+        $sells_book = BookItemsell::find($id);
+        return view('bookstall.newitem.book_sells_details',compact('sells_book'));
+    }
 }

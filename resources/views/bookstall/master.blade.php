@@ -54,7 +54,7 @@
                   </a>
                   <ul class="sub">
                   <li><a class="" href="{{route('manage-item')}}">Manage All Item</a></li>
-                  <li><a class="" href=""></a></li>
+                  <li><a class="" href="{{route('manage-book-item-sales')}}">Manage All Sells Book</a></li>
                   <li><a class="" href=""></a></li>
                   </ul>
               </li>
