@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+    <script>
+    function myFunction()
+    {
+    window.print();
+    }
+</script>
 </head>
 <body>
     <div class="container">
@@ -12,7 +18,7 @@
             <div class="card-header">
                 Invoice
                 <strong><?php echo date('Y-M-d')?></strong>
-                <span class="float-right"> <strong><a href="">Print Invoice</a></strong>  </span>
+                <span class="float-right"> <strong><a href="#" onclick="myFunction()">Print Invoice</a></strong>  </span>
 
             </div>
             <div class="card-body">
