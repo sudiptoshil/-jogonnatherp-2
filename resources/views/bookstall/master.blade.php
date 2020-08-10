@@ -5,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
    <meta charset="utf-8" />
-   <title>Metro Lab</title>
+   <title>BookStall Home</title>
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
    <meta content="Mosaddek" name="author" />
@@ -90,7 +90,7 @@
                    <h3 class="page-title">
                      Bookstall Dashboard
                    </h3>
-                   
+
                    <!-- END PAGE TITLE & BREADCRUMB-->
                </div>
             </div>
