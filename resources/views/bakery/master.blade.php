@@ -23,7 +23,7 @@
 <!-- BEGIN BODY -->
 <body class="fixed-top">
    <!-- BEGIN HEADER -->
-   @include('admin.layouts.header')
+   @include('bakery.layouts.header')
    <!-- END HEADER -->
    <!-- BEGIN CONTAINER -->
    <div id="container" class="row-fluid">
@@ -41,7 +41,7 @@
          <!-- BEGIN SIDEBAR MENU -->
           <ul class="sidebar-menu">
               <li class="sub-menu active">
-              <a class="" href="{{route('dashboard')}}">
+              <a class="" href="{{route('bakery-dashboard')}}">
                       <i class="icon-dashboard"></i>
                       <span>Dashboard</span>
                   </a>
@@ -53,11 +53,9 @@
                       <span class="arrow"></span>
                   </a>
                   <ul class="sub">
-                  <li><a class="" href="{{route('manage-admin')}}">Manage All Admin</a></li>
-                  <li><a class="" href="{{route('password-reset')}}">Reset password</a></li>
-                  <li><a class="" href="{{route('manage-bookstall')}}">Manage All Bookstall User</a></li>
-                  <li><a class="" href="{{route('manage-bakery-user')}}">Manage All Bakery User</a></li>
-
+                  <li><a class="" href="">Manage All Item</a></li>
+                  <li><a class="" href="">Manage All Sells Book</a></li>
+                  <li><a class="" href=""></a></li>
                   </ul>
               </li>
 
@@ -90,35 +88,14 @@
                    <!-- END THEME CUSTOMIZER-->
                   <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                    <h3 class="page-title">
-                     Dashboard
+                     Bakery Dashboard
                    </h3>
-                   <ul class="breadcrumb">
-                       <li>
-                           <a href="#">Home</a>
-                           <span class="divider">/</span>
-                       </li>
-                       <li>
-                           <a href="#">Metro Lab</a>
-                           <span class="divider">/</span>
-                       </li>
-                       <li class="active">
-                           Dashboard
-                       </li>
-                       <li class="pull-right search-wrap">
-                           <form action="http://thevectorlab.net/metrolab/search_result.html" class="hidden-phone">
-                               <div class="input-append search-input-area">
-                                   <input class="" id="appendedInputButton" type="text">
-                                   <button class="btn" type="button"><i class="icon-search"></i> </button>
-                               </div>
-                           </form>
-                       </li>
-                   </ul>
                    <!-- END PAGE TITLE & BREADCRUMB-->
                </div>
             </div>
             <!-- END PAGE HEADER-->
             <!-- BEGIN PAGE CONTENT-->
-           @yield('admin-home')
+           @yield('bakery-home')
 
             <!-- END PAGE CONTENT-->
          </div>
@@ -129,7 +106,7 @@
    <!-- END CONTAINER -->
 
    <!-- BEGIN FOOTER -->
-  @include('admin.layouts.footer')
+  @include('bakery.layouts.footer')
    <!-- END FOOTER -->
 
    <!-- BEGIN JAVASCRIPTS -->

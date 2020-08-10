@@ -9,18 +9,13 @@
             <!--END SIDEBAR TOGGLE-->
             <!-- BEGIN LOGO -->
             <a class="brand">
-            </a>
-            <!-- END LOGO -->
-            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-                <span class="icon-bar"></span>
-            <a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse">
+                
             </a>
             <!-- END RESPONSIVE MENU TOGGLER -->
             <div id="top_menu" class="nav notify-row">
                 <!-- BEGIN NOTIFICATION -->
                 <ul class="nav top-menu">
-                <h2 align="center" style="color:white">hello world</h2>
-
+                    hello world
                 </ul>
             </div>
             <!-- END  NOTIFICATION -->
@@ -29,11 +24,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="img/avatar1_small.jpg" alt="">
-                        <span class="username">{{Session::get('admin_name')}}</span>
+                        <span class="username">{{Session::get('bakery_name')}}</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                        <li><a href="{{route('admin-logout')}}"><i class="icon-key"></i> Log Out</a></li>
+                        <li><a href="{{route('bakery-logout')}}"><i class="icon-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                     <!-- END USER LOGIN DROPDOWN -->

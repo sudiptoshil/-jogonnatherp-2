@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Bakery;
 use App\Models\Bookstall;
 use Session;
 use DB;
@@ -24,17 +25,17 @@ class AdminController extends Controller
         $admin = Admin::where('email', $request->email)->first();
         if ($admin) {
             if (password_verify($request->password, $admin->password)) {
-                
+
                 if($admin->activity == 1){
                     Session::put('admin_id', $admin->id);
                     Session::put('admin_name', $admin->name);
-                
+
                     return redirect('/admin/dashboard');
                  }
                  else{
                     return redirect('/admin/login')->with('message', 'You are not activated yet!!');
                  }
-              
+
             } else {
                 return redirect('/admin/login')->with('message', 'Wrong Password!!');
             }
@@ -48,7 +49,7 @@ class AdminController extends Controller
         return view('admin.createadmin.create_admin');
     }
     public function save_admin(Request $request)
-    {   
+    {
         // return $request->all();
         // exit();
 
@@ -94,18 +95,18 @@ class AdminController extends Controller
     }
 
     public function update_password(Request $request)
-    {   
+    {
         // return $request->all();
         // exit();
         $admin = Admin::where('id', $request->id)->first();
         if ($admin) {
             if (password_verify($request->oldpassword, $admin->password)) {
-                
+
                 $newpassword = Admin::find($request->id);
                 $newpassword->password = bcrypt($request->newpassword);
                 $newpassword->save();
                 return redirect()->back()->with('message','password changes successfully!!');
-          
+
             } else {
                 return redirect()->back()->with('message','old password not valid!!');
             }
@@ -130,7 +131,7 @@ class AdminController extends Controller
     }
 
     public function manage_bookstall_user()
-    {  
+    {
          $bookstall = Bookstall::all();
         return view('admin.createbookstall.manage_bookstall',compact('bookstall'));
     }
@@ -149,5 +150,45 @@ class AdminController extends Controller
         $bookstall->activity = 0;
         $bookstall->save();
         return redirect()->back()->with('message','bookstall deactivated Successfully!!');
+    }
+
+    // for create bakery user.................
+    public function bakery_user()
+    {
+        return view('admin.createbakery.create_bakery');
+    }
+
+    public function save_bakery_user(Request $request)
+    {
+        $admin = new Bakery();
+        $admin->name = $request->name;
+        $admin->admin_id = Session::get('admin_id');
+        $admin->email = $request->email;
+        $admin->password = bcrypt($request->password);
+        $admin->activity = 1;
+        $admin->save();
+        return redirect()->back()->with('message','Bakery User Created Successfully!!');
+    }
+
+    public function manage_bakery_user()
+    {
+        $bakery = Bakery::all();
+        return view('admin.createbakery.manage_bakery',compact('bakery'));
+    }
+
+    public function bakery_active($id)
+    {
+        $bakery = Bakery::find($id);
+        $bakery->activity = 1;
+        $bakery->save();
+        return redirect()->back()->with('message','Bakery Activated Successfully!!');
+    }
+
+    public function bakery_deactive($id)
+    {
+        $bakery = Bakery::find($id);
+        $bakery->activity = 0;
+        $bakery->save();
+        return redirect()->back()->with('message','Bakery deactivated Successfully!!');
     }
 }

@@ -5,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
    <meta charset="utf-8" />
-   <title>Bookstall Login</title>
+   <title>Bakery Login</title>
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
    <meta content="" name="author" />
@@ -22,7 +22,8 @@
     <div class="lock-header">
         <!-- BEGIN LOGO -->
         <a class="center" id="logo" href="">
-            <h2 style="margin-top: 15%"></h2>
+            {{-- <img src="{{asset('/')}}img/images.jpg" alt="sudipto" height="5%" width="5%"/> --}}
+            <h2 style="margin-top: 10%"></h2>
         </a>
         <!-- END LOGO -->
     </div>
@@ -32,11 +33,11 @@
         <div class="metro single-size red">
             <div class="locked">
                 <i class="icon-lock"></i>
-                <span>Bookstall Login</span>
+                <span>Bakery Login</span>
             </div>
         </div>
         <div class="metro double-size green">
-        <form action="{{route('bookstall-login-process')}}" method="post">
+        <form action="{{route('bakery-login-process')}}" method="post">
             @csrf
                 <div class="input-append lock-input">
                     <input type="text" name="email" class="" placeholder="email">

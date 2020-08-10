@@ -5,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
    <meta charset="utf-8" />
-   <title>Login</title>
+   <title>Admin Login</title>
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
    <meta content="" name="author" />
@@ -22,7 +22,7 @@
     <div class="lock-header">
         <!-- BEGIN LOGO -->
         <a class="center" id="logo" href="">
-            <img class="center" alt="logo" src="{{asset('/')}}img/logo.png">
+            <h2 style="margin-top: 10%"></h2>
         </a>
         <!-- END LOGO -->
     </div>
@@ -32,7 +32,7 @@
         <div class="metro single-size red">
             <div class="locked">
                 <i class="icon-lock"></i>
-                <span>Login</span>
+                <span>Admin Login</span>
             </div>
         </div>
         <div class="metro double-size green">
@@ -41,17 +41,17 @@
                 <div class="input-append lock-input">
                     <input type="text" name="email" class="" placeholder="email">
                 </div>
-           
+
         </div>
         <div class="metro double-size yellow">
-            
+
                 <div class="input-append lock-input">
                     <input type="password" name="password" class="" placeholder="Password">
                 </div>
-            
+
         </div>
         <div class="metro single-size terques login">
-            
+
                 <button type="submit" class="btn login-btn">
                     Login
                     <i class=" icon-long-arrow-right"></i>

@@ -1,5 +1,5 @@
-@extends('admin.admin_master')
-@section('admin-home')
+@extends('bakery.master')
+@section('bakery-home')
 <div class="row-fluid">
     <!--BEGIN METRO STATES-->
     <div class="metro-nav">
@@ -18,61 +18,24 @@
             </a>
         </div>
         <div class="metro-nav-block nav-block-grey">
-        <a data-original-title="" href="{{route('bookstall-user')}}">
-                <i class="icon-user"></i>
+        <a data-original-title="" href="">
+                <i class="icon-comments-alt"></i>
                 <div class="info"></div>
-                <div class="status">Create Bookstall User</div>
+                <div class="status">Add New Book Item</div>
             </a>
         </div>
         <div class="metro-nav-block nav-block-blue double">
-        <a data-original-title="" href="{{route('create-admin')}}">
-                <i class="icon-user"></i>
+        <a data-original-title="" href="">
+                <i class="icon-eye-open"></i>
                 <div class="info"></div>
-                <div class="status">Create Admin</div>
+                <div class="status">Sales Form</div>
             </a>
         </div>
         <div class="metro-nav-block nav-block-red">
-        <a data-original-title="" href="{{route('create-bakery-user')}}">
-                <i class="icon-user"></i>
-                <div class="info"></div>
-                <div class="status">Create New Bakery User</div>
-            </a>
-        </div>
-    </div>
-    <div class="metro-nav">
-        <div class="metro-nav-block nav-block-blue">
             <a data-original-title="" href="#">
-                <i class="icon-shopping-cart"></i>
-                <div class="info">29</div>
-                <div class="status">New Order</div>
-            </a>
-        </div>
-        <div class="metro-nav-block nav-block-green double">
-            <a data-original-title="" href="#">
-                <i class="icon-tasks"></i>
-                <div class="info">$37624</div>
-                <div class="status">Stock</div>
-            </a>
-        </div>
-        <div class="metro-nav-block nav-block-orange">
-            <a data-original-title="" href="#">
-                <i class="icon-envelope"></i>
-                <div class="info">123</div>
-                <div class="status">Messages</div>
-            </a>
-        </div>
-        <div class="metro-nav-block nav-block-purple">
-            <a data-original-title="" href="#">
-                <i class="icon-remove-sign"></i>
-                <div class="info">34</div>
-                <div class="status">Cancelled</div>
-            </a>
-        </div>
-        <div class="metro-nav-block nav-block-grey ">
-            <a data-original-title="" href="#">
-                <i class="icon-external-link"></i>
-                <div class="info">$53412</div>
-                <div class="status">Total Profit</div>
+                <i class="icon-bar-chart"></i>
+                <div class="info">+288</div>
+                <div class="status">Update</div>
             </a>
         </div>
     </div>
@@ -117,4 +80,6 @@
         <!-- END CHART PORTLET-->
     </div>
 </div>
+
+
 @endsection

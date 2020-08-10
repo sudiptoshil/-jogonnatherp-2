@@ -42,6 +42,14 @@ Route::group(['middleware' => ['adminmiddleware']], function () {
     Route::get('/admin/active-bookstall-user/{id}', 'Admin\AdminController@bookstall_active')->name('bookstall-active');
     Route::get('/admin/deactive-bookstall-user/{id}', 'Admin\AdminController@bookstall_deactive')->name('bookstall-deactive');
     Route::get('/admin/manage-bookstall-user', 'Admin\AdminController@manage_bookstall_user')->name('manage-bookstall');
+
+    // for create bakery user.......................................................
+    Route::get('/admin/create-bakery-user', 'Admin\AdminController@bakery_user')->name('create-bakery-user');
+    Route::post('/admin/create-bakery-user', 'Admin\AdminController@save_bakery_user')->name('save-bakery-user');
+    Route::get('/admin/manage-bakery-user', 'Admin\AdminController@manage_bakery_user')->name('manage-bakery-user');
+    Route::get('/admin/active-bakery-user/{id}', 'Admin\AdminController@bakery_active')->name('active-bakery-user');
+    Route::get('/admin/deactive-bakery-user/{id}', 'Admin\AdminController@bakery_deactive')->name('deactive-bakery-user');
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -69,5 +77,16 @@ Route::group(['middleware' => ['bookstallmiddleware']], function () {
 Route::get('/bookstall/login', 'Bookstall\BookstallController@login')->name('bookstall-login');
 Route::post('/bookstall/login', 'Bookstall\BookstallController@login_process')->name('bookstall-login-process');
 
+// Bakery part...........................................................
+
+Route::group(['middleware' => ['bakerymiddleware']], function () {
+
+    Route::get('/bakery/dashboard','Bakery\BakeryController@index')->name('bakery-dashboard');
+    Route::get('/bakery/logout','Bakery\BakeryController@logout')->name('bakery-logout');
+
+});
+// for bakery login..........................................................
+Route::get('/bakery/login', 'Bakery\BakeryController@login')->name('bakery-login');
+Route::post('/bakery/login', 'Bakery\BakeryController@login_process')->name('bakery-login-process');
 
 
